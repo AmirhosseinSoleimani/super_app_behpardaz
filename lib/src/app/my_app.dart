@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:super_app_behpardaz/src/features/home/presentation/home_screen.dart';
+import 'package:super_app_behpardaz/src/routing/app_routing.dart';
 import 'package:super_app_behpardaz/src/shared/theme/provider/theme_controller.dart';
 import 'package:super_app_behpardaz/src/shared/theme/provider/theme_provider.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends ConsumerWidget {
       data: (themeState) => themeState.appTheme,
       orElse: () => AppTheme.system,
     );
-    return MaterialApp(
+    return MaterialApp.router(
       theme: themeController.getTheme(appTheme),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
@@ -28,7 +29,7 @@ class MyApp extends ConsumerWidget {
         Locale('fa', ''), // Farsi
       ],
       locale: const Locale('fa'),
-      home: const HomeScreen(),
+      routerConfig: Routes.routes(),
     );
   }
 }

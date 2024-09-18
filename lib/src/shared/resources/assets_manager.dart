@@ -6,6 +6,7 @@ class ImageManager {
   static const String image1 = 'assets/images/1.png';
   static const String image2 = 'assets/images/2.png';
   static const String image3 = 'assets/images/3.png';
+  static const String iranFlag = 'assets/images/iran_flag.png';
 }
 
 
@@ -14,8 +15,11 @@ class IconManager {
   static const IconData homeCupertino = CupertinoIcons.add;
 
   // Material Icons
-  static const IconData homeMaterial = Icons.add;
+  static const IconData add = Icons.add;
   static const IconData arrowForward = Icons.arrow_forward_ios_outlined;
+  static const IconData arrowBack = Icons.arrow_back;
+  static const IconData close = Icons.close;
+  static const IconData wheelchair = Icons.wheelchair_pickup_outlined;
 
 }
 
@@ -37,4 +41,10 @@ class SvgManager {
 
   static const String card = 'assets/svg/card.svg';
   static const String wallet = 'assets/svg/wallet.svg';
+
+  static const String bmw = 'assets/svg/bmw.svg';
+  static const String carReport = 'assets/svg/car-report.svg';
+  static const String cctv = 'assets/svg/cctv.svg';
+  static const String road = 'assets/svg/road.svg';
+  static const String traffic = 'assets/svg/traffic.svg';
 }

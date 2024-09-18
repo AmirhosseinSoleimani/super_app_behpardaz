@@ -23,6 +23,7 @@ class GridViewScreen extends StatelessWidget {
           return GridContainer(
             svgPath: gridViewList[index].svgPath ?? '',
             title: gridViewList[index].title ?? '',
+            onTap: gridViewList[index].onTap ?? () {},
 
           );
         },
@@ -32,14 +33,15 @@ class GridViewScreen extends StatelessWidget {
 }
 
 class GridContainer extends StatelessWidget {
-  const GridContainer({super.key, required this.svgPath, required this.title});
+  const GridContainer({super.key, required this.svgPath, required this.title, required this.onTap});
   final String svgPath;
   final String title;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkwellButton(
-      onTap: () {},
+      onTap: onTap,
       backgroundColor: Theme.of(context).colorScheme.secondary,
       borderRadius: AppSize.s12,
       borderColor: Theme.of(context).colorScheme.secondary,

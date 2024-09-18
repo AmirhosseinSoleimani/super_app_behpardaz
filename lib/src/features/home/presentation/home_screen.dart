@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:super_app_behpardaz/src/features/car_services/presentation/car_services_screen.dart';
 import 'package:super_app_behpardaz/src/features/home/domain/entity/grid_view_entity.dart';
 import 'package:super_app_behpardaz/src/features/home/presentation/widgets/banner_screen.dart';
 import 'package:super_app_behpardaz/src/features/home/presentation/widgets/drawer_widget.dart';
@@ -10,6 +12,8 @@ import 'package:super_app_behpardaz/src/shared/ui_kit/svg_widget/svg_widget.dart
 
 
 class HomeScreen extends StatefulWidget {
+  static const homeScreenPath = '/';
+  static const homeScreenName = 'homeScreen';
   const HomeScreen({super.key});
 
   @override
@@ -18,39 +22,51 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  List<GridViewEntity> gridViewList = [
-    GridViewEntity(
+  List<GridViewEntity> _getGridViewList(BuildContext context) {
+    return [
+      GridViewEntity(
         svgPath: SvgManager.car,
-        title: 'خدمات خودرویی'
-    ),
-    GridViewEntity(
+        title: 'خدمات خودرویی',
+        onTap: () {
+          context.push(CarServicesScreen.carServicesScreenPath);
+        },
+      ),
+      GridViewEntity(
         svgPath: SvgManager.simCard,
-        title: 'خرید شارژ'
-    ),
-    GridViewEntity(
+        title: 'خرید شارژ',
+        onTap: () {},
+      ),
+      GridViewEntity(
         svgPath: SvgManager.bank,
-        title: 'خدمات بانکی'
-    ),
-    GridViewEntity(
+        title: 'خدمات بانکی',
+        onTap: () {},
+      ),
+      GridViewEntity(
         svgPath: SvgManager.charity,
-        title: 'نیکوکاری'
-    ),
-    GridViewEntity(
+        title: 'نیکوکاری',
+        onTap: () {},
+      ),
+      GridViewEntity(
         svgPath: SvgManager.internet,
-        title: 'خرید اینترنت'
-    ),
-    GridViewEntity(
+        title: 'خرید اینترنت',
+        onTap: () {},
+      ),
+      GridViewEntity(
         svgPath: SvgManager.hotel,
-        title: 'هتل'
-    ),
-    GridViewEntity(
+        title: 'هتل',
+        onTap: () {},
+      ),
+      GridViewEntity(
         svgPath: SvgManager.ticket,
-        title: 'خرید بلیط'
-    ),
-  ];
+        title: 'خرید بلیط',
+        onTap: () {},
+      ),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
+    final gridViewList = _getGridViewList(context);
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(

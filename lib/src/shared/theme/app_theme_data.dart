@@ -28,6 +28,7 @@ class DarkThemeData extends AppThemeData {
       surface: ColorDarkManager.black,
       onSurface: ColorDarkManager.white,
       secondaryContainer: ColorDarkManager.gold,
+      surfaceContainer: ColorDarkManager.lightBlack2,
 
 
       brightness: Brightness.light,

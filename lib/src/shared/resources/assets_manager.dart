@@ -22,6 +22,7 @@ class IconManager {
 class SvgManager {
   static const String sun = 'assets/svg/sun.svg';
   static const String moon = 'assets/svg/moon.svg';
+  static const String brightnessAuto = 'assets/svg/brightness-auto.svg';
   static const String info = 'assets/svg/info.svg';
   static const String history = 'assets/svg/history.svg';
   static const String logOut = 'assets/svg/log-out.svg';

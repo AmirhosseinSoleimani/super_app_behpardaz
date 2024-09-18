@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:super_app_behpardaz/src/features/home/presentation/home_screen.dart';
-import 'package:super_app_behpardaz/src/shared/theme/app_theme_data.dart';
+import 'package:super_app_behpardaz/src/shared/theme/provider/theme_controller.dart';
+import 'package:super_app_behpardaz/src/shared/theme/provider/theme_provider.dart';
 
-class MyApp extends StatelessWidget {
+
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
+
   @override
-  Widget build(BuildContext context) {
-    final darkTheme = DarkThemeData().materialThemeData;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeController = ref.read(themeControllerProvider.notifier);
+    final appTheme = ref.watch(themeControllerProvider).maybeWhen(
+      data: (themeState) => themeState.appTheme,
+      orElse: () => AppTheme.system,
+    );
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: darkTheme,
-      themeMode: ThemeMode.dark,
+      theme: themeController.getTheme(appTheme),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

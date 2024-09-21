@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:super_app_behpardaz/src/features/buy_charge/presentation/buy_charge_screen.dart';
+import 'package:super_app_behpardaz/src/features/buy_internet/presentation/buy_internet_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/car_services_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/add_car_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/violation_screen.dart';
@@ -72,6 +73,18 @@ class Routes {
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) => child,
               child:  const BuyChargeScreen(),
+            );
+          }),
+      GoRoute(
+          path: BuyInternetScreen.buyInternetScreenPath,
+          name: BuyInternetScreen.buyInternetScreenName,
+          pageBuilder: (BuildContext context, GoRouterState state) {
+            return CustomTransitionPage(
+              key: state.pageKey,
+              transitionDuration: Duration.zero,
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) => child,
+              child:  const BuyInternetScreen(),
             );
           }),
     ],

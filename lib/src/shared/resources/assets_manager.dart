@@ -20,6 +20,8 @@ class IconManager {
   static const IconData arrowBack = Icons.arrow_back;
   static const IconData close = Icons.close;
   static const IconData wheelchair = Icons.wheelchair_pickup_outlined;
+  static const IconData search = Icons.search_outlined;
+  static const IconData wifi = Icons.wifi;
 
 }
 

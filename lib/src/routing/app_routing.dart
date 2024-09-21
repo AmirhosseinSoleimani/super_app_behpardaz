@@ -7,13 +7,14 @@ import 'package:super_app_behpardaz/src/features/car_services/presentation/car_s
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/add_car_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/violation_screen.dart';
 import 'package:super_app_behpardaz/src/features/home/presentation/home_screen.dart';
+import 'package:super_app_behpardaz/src/features/hotels/presentation/hotel_screen.dart';
 
 class Routes {
   static final parentNavigatorKey = GlobalKey<NavigatorState>();
 
   static GoRouter routes({String? initialLocation})=> GoRouter(
     navigatorKey: parentNavigatorKey,
-    initialLocation: initialLocation ?? HomeScreen.homeScreenPath,
+    initialLocation: initialLocation ?? HotelScreen.hotelScreenPath,
     routes: [
       GoRoute(
           path: CarServicesScreen.carServicesScreenPath,
@@ -85,6 +86,18 @@ class Routes {
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) => child,
               child:  const BuyInternetScreen(),
+            );
+          }),
+      GoRoute(
+          path: HotelScreen.hotelScreenPath,
+          name: HotelScreen.hotelScreenName,
+          pageBuilder: (BuildContext context, GoRouterState state) {
+            return CustomTransitionPage(
+              key: state.pageKey,
+              transitionDuration: Duration.zero,
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) => child,
+              child:  const HotelScreen(),
             );
           }),
     ],

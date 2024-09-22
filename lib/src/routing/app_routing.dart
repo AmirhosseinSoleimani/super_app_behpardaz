@@ -8,9 +8,11 @@ import 'package:super_app_behpardaz/src/features/bank_services/presentation/widg
 import 'package:super_app_behpardaz/src/features/bank_services/presentation/widgets/result_card_to_card.dart';
 import 'package:super_app_behpardaz/src/features/buy_charge/presentation/buy_charge_screen.dart';
 import 'package:super_app_behpardaz/src/features/buy_internet/presentation/buy_internet_screen.dart';
+import 'package:super_app_behpardaz/src/features/car_services/domain/entity/aid_car_entity.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/car_services_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/add_car_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/violation_screen.dart';
+import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/web_view_page.dart';
 import 'package:super_app_behpardaz/src/features/home/presentation/home_screen.dart';
 import 'package:super_app_behpardaz/src/features/hotels/presentation/hotel_screen.dart';
 
@@ -152,6 +154,19 @@ class Routes {
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) => child,
               child: const ResultCardToCard(),
+            );
+          }),
+      GoRoute(
+          path: WebViewPage.webViewScreenPath,
+          name: WebViewPage.webViewScreenName,
+          pageBuilder: (BuildContext context, GoRouterState state) {
+            final args = state.extra as AidCarEntity;
+            return CustomTransitionPage(
+              key: state.pageKey,
+              transitionDuration: Duration.zero,
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) => child,
+              child: WebViewPage(url: args.url, title: args.title),
             );
           }),
     ],

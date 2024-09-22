@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Space.h16,
           const SizedBox(
               width: double.infinity,
-              height: 200,
+              height: AppSize.s200,
               child: BannerScreen()),
           Expanded(child: GridViewScreen(gridViewList: gridViewList,)),
         ],

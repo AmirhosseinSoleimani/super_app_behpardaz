@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:super_app_behpardaz/src/features/car_services/domain/entity/aid_car_entity.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/add_car_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/car_plate_widget.dart';
+import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/violation_screen.dart';
+import 'package:super_app_behpardaz/src/features/car_services/presentation/widgets/web_view_page.dart';
 import 'package:super_app_behpardaz/src/shared/resources/assets_manager.dart';
 import 'package:super_app_behpardaz/src/shared/resources/color_manager.dart';
 import 'package:super_app_behpardaz/src/shared/resources/value_manager.dart';
@@ -139,30 +142,35 @@ class CarServicesScreen extends StatelessWidget {
             ),
           ),
           Space.h16,
-          Container(
-            width: MediaQuery.sizeOf(context).width * 0.9,
-            height: AppSize.s60,
-            decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary,
-                borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p12),
-              child: Row(
-                children: [
-                  SVGWidget(svgPath: SvgManager.traffic, size: AppSize.s32, color: Theme.of(context).colorScheme.onPrimary,),
-                  Space.w8,
-                  Text(
-                    'خلافی',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  const Spacer(),
-                  Icon(
-                    IconManager.arrowForward,
-                    size: AppSize.s18,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  )
-                ],
+          InkWell(
+            onTap: () {
+              context.push(ViolationScreen.violationScreenPath);
+            },
+            child: Container(
+              width: MediaQuery.sizeOf(context).width * 0.9,
+              height: AppSize.s60,
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                  borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppPadding.p12),
+                child: Row(
+                  children: [
+                    SVGWidget(svgPath: SvgManager.traffic, size: AppSize.s32, color: Theme.of(context).colorScheme.onPrimary,),
+                    Space.w8,
+                    Text(
+                      'خلافی',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const Spacer(),
+                    Icon(
+                      IconManager.arrowForward,
+                      size: AppSize.s18,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
@@ -219,6 +227,42 @@ class CarServicesScreen extends StatelessWidget {
                     color: Theme.of(context).colorScheme.onSurface,
                   )
                 ],
+              ),
+            ),
+          ),
+          Space.h16,
+          InkWell(
+            onTap: () {
+              context.push(WebViewPage.webViewScreenPath, extra: AidCarEntity(
+                title: 'امداد خودروی سایپا',
+                url: 'https://emdad.behpardaz.net'
+              ));
+            },
+            child: Container(
+              width: MediaQuery.sizeOf(context).width * 0.9,
+              height: AppSize.s60,
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                  borderRadius: const BorderRadius.all(Radius.circular(AppSize.s12))
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppPadding.p12),
+                child: Row(
+                  children: [
+                    SVGWidget(svgPath: SvgManager.carRepair, size: AppSize.s32, color: Theme.of(context).colorScheme.onPrimary,),
+                    Space.w8,
+                    Text(
+                      'امداد خودروی سایپا',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const Spacer(),
+                    Icon(
+                      IconManager.arrowForward,
+                      size: AppSize.s18,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    )
+                  ],
+                ),
               ),
             ),
           ),

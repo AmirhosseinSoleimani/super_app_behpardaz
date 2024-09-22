@@ -56,4 +56,5 @@ class SvgManager {
   static const String cctv = 'assets/svg/cctv.svg';
   static const String road = 'assets/svg/road.svg';
   static const String traffic = 'assets/svg/traffic.svg';
+  static const String carRepair = 'assets/svg/car-repair.svg';
 }

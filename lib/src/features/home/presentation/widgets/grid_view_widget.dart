@@ -13,10 +13,10 @@ class GridViewScreen extends StatelessWidget {
       padding: const EdgeInsets.all(AppPadding.p8),
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
+          crossAxisCount: 3,
           crossAxisSpacing: 8.0,
           mainAxisSpacing: 8.0,
-          childAspectRatio: 1.0,
+          childAspectRatio: 1.3,
         ),
         itemCount: gridViewList.length,
         itemBuilder: (context, index) {

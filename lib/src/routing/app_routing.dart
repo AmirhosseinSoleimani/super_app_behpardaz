@@ -5,6 +5,7 @@ import 'package:super_app_behpardaz/src/features/bank_services/domain/entity/pay
 import 'package:super_app_behpardaz/src/features/bank_services/presentation/bank_services_screen.dart';
 import 'package:super_app_behpardaz/src/features/bank_services/presentation/widgets/card_to_card_screen.dart';
 import 'package:super_app_behpardaz/src/features/bank_services/presentation/widgets/confirm_card_to_card_screen.dart';
+import 'package:super_app_behpardaz/src/features/bank_services/presentation/widgets/result_card_to_card.dart';
 import 'package:super_app_behpardaz/src/features/buy_charge/presentation/buy_charge_screen.dart';
 import 'package:super_app_behpardaz/src/features/buy_internet/presentation/buy_internet_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/car_services_screen.dart';
@@ -18,7 +19,7 @@ class Routes {
 
   static GoRouter routes({String? initialLocation})=> GoRouter(
     navigatorKey: parentNavigatorKey,
-    initialLocation: initialLocation ?? BuyInternetScreen.buyInternetScreenPath,
+    initialLocation: initialLocation ?? HomeScreen.homeScreenPath,
     routes: [
       GoRoute(
           path: CarServicesScreen.carServicesScreenPath,
@@ -139,6 +140,18 @@ class Routes {
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) => child,
               child: ConfirmCardToCardScreen(sourceCard: args.sourceCard, destinationCard: args.destinationCard,),
+            );
+          }),
+      GoRoute(
+          path: ResultCardToCard.resultCardToCardScreenPath,
+          name: ResultCardToCard.resultCardToCardScreenName,
+          pageBuilder: (BuildContext context, GoRouterState state) {
+            return CustomTransitionPage(
+              key: state.pageKey,
+              transitionDuration: Duration.zero,
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) => child,
+              child: const ResultCardToCard(),
             );
           }),
     ],

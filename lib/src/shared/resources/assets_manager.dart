@@ -10,6 +10,7 @@ class ImageManager {
   static const String shahr = 'assets/images/shahr.png';
   static const String tejarat = 'assets/images/tejarat.png';
   static const String resalat = 'assets/images/resalat.png';
+  static const String transaction = 'assets/images/transaction.png';
 }
 
 
@@ -25,6 +26,9 @@ class IconManager {
   static const IconData wheelchair = Icons.wheelchair_pickup_outlined;
   static const IconData search = Icons.search_outlined;
   static const IconData wifi = Icons.wifi;
+  static const IconData check = Icons.check_circle_outline;
+  static const IconData copy = Icons.copy;
+  static const IconData share = Icons.share;
 
 }
 

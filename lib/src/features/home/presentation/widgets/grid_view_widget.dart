@@ -23,7 +23,8 @@ class GridViewScreen extends StatelessWidget {
           return GridContainer(
             svgPath: gridViewList[index].svgPath ?? '',
             title: gridViewList[index].title ?? '',
-            onTap: gridViewList[index].onTap ?? () {},
+            onTap: gridViewList[index].onTap ?? () {
+            },
 
           );
         },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:super_app_behpardaz/src/features/bank_services/presentation/widgets/result_card_to_card.dart';
 import 'package:super_app_behpardaz/src/shared/resources/assets_manager.dart';
 import 'package:super_app_behpardaz/src/shared/resources/value_manager.dart';
 import 'package:super_app_behpardaz/src/shared/ui_kit/inkwell_button/inkwell_button.dart';
@@ -164,6 +165,7 @@ class _ConfirmCardToCardScreenState extends State<ConfirmCardToCardScreen> with 
               const Spacer(),
               InkwellButton(
                 onTap: () {
+                  context.go(ResultCardToCard.resultCardToCardScreenPath);
                 },
                 borderColor: Theme.of(context).colorScheme.onPrimary,
                 backgroundColor: Theme.of(context).colorScheme.onPrimary,

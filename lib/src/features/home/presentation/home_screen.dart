@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:super_app_behpardaz/src/features/bank_services/presentation/bank_services_screen.dart';
+import 'package:super_app_behpardaz/src/features/buy_charge/presentation/buy_charge_screen.dart';
+import 'package:super_app_behpardaz/src/features/buy_internet/presentation/buy_internet_screen.dart';
 import 'package:super_app_behpardaz/src/features/car_services/presentation/car_services_screen.dart';
 import 'package:super_app_behpardaz/src/features/home/domain/entity/grid_view_entity.dart';
 import 'package:super_app_behpardaz/src/features/home/presentation/widgets/banner_screen.dart';
@@ -34,12 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
       GridViewEntity(
         svgPath: SvgManager.simCard,
         title: 'خرید شارژ',
-        onTap: () {},
+        onTap: () {
+          context.push(BuyChargeScreen.buyChargeScreenPath);
+        },
       ),
       GridViewEntity(
         svgPath: SvgManager.bank,
         title: 'خدمات بانکی',
-        onTap: () {},
+        onTap: () {
+          context.push(BankServicesScreen.bankServicesScreenPath);
+        },
       ),
       GridViewEntity(
         svgPath: SvgManager.charity,
@@ -49,7 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
       GridViewEntity(
         svgPath: SvgManager.internet,
         title: 'خرید اینترنت',
-        onTap: () {},
+        onTap: () {
+          context.push(BuyInternetScreen.buyInternetScreenPath);
+        },
       ),
       GridViewEntity(
         svgPath: SvgManager.hotel,

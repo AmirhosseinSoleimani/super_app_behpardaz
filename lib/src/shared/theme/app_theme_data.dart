@@ -53,7 +53,7 @@ class DarkThemeData extends AppThemeData {
         labelLarge: getBoldStyle(fontSize: AppSize.s12, color: ColorDarkManager.white),
         labelMedium: getSemiBoldStyle(fontSize: AppSize.s12, color: ColorDarkManager.white),
         labelSmall: getRegularStyle(fontSize: AppSize.s12, color: ColorDarkManager.white),
-      ).apply(fontFamily: FontConstants.fontFamily)
+      ).apply(fontFamily: FontConstants.fontFamilyPersian)
 
   );
 

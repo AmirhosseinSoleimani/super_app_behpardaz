@@ -7,6 +7,9 @@ class ImageManager {
   static const String image2 = 'assets/images/2.png';
   static const String image3 = 'assets/images/3.png';
   static const String iranFlag = 'assets/images/iran_flag.png';
+  static const String shahr = 'assets/images/shahr.png';
+  static const String tejarat = 'assets/images/tejarat.png';
+  static const String resalat = 'assets/images/resalat.png';
 }
 
 

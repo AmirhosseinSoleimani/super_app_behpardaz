@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       GridViewEntity(
         svgPath: SvgManager.internet,
-        title: 'خرید اینترنت',
+        title: 'بسته اینترنت',
         onTap: () {
           context.push(BuyInternetScreen.buyInternetScreenPath);
         },

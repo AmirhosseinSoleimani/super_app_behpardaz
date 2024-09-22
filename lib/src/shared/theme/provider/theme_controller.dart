@@ -65,7 +65,7 @@ class ThemeController extends AsyncNotifier<ThemeState> {
     final lightTheme = LightThemeData().materialThemeData;
     switch (appTheme) {
       case AppTheme.light:
-        return lightTheme;
+        return darkTheme;
       case AppTheme.dark:
         return darkTheme;
       case AppTheme.system:

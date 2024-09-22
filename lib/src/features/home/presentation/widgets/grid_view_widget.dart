@@ -48,8 +48,8 @@ class GridContainer extends StatelessWidget {
       borderColor: Theme.of(context).colorScheme.secondary,
       child: Column(
         children: [
-          SVGWidget(svgPath: svgPath, color: Theme.of(context).colorScheme.onSurface, size: AppSize.s28,),
-          Space.h4,
+          SVGWidget(svgPath: svgPath, color: Theme.of(context).colorScheme.onSurface, size: 35,),
+          Space.h8,
           Text(
             title,
             style: Theme.of(context).textTheme.bodyMedium,

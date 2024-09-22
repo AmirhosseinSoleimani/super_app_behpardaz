@@ -203,7 +203,7 @@ class DrawerWidget extends ConsumerWidget {
                     },
                   ),
                   ListTile(
-                    title: Text('فهرت تراکنش ها', style: Theme
+                    title: Text('فهرست تراکنش ها', style: Theme
                         .of(context)
                         .textTheme
                         .titleMedium),
